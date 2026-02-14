@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Everything ❤️</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background: linear-gradient(135deg,#ff758c,#ff7eb3);
+  color:white;
+  text-align:center;
+}
+
+.container{
+  max-width:650px;
+  margin:60px auto;
+  padding:25px;
+}
+
+h1{
+  font-size:28px;
+  margin-bottom:25px;
+}
+
+p{
+  font-size:18px;
+  line-height:1.8;
+  margin-bottom:25px;
+}
+
+button{
+  padding:12px 25px;
+  font-size:18px;
+  border:none;
+  border-radius:25px;
+  background:white;
+  color:#ff4d6d;
+  cursor:pointer;
+}
+
+video{
+  margin-top:25px;
+  width:100%;
+  border-radius:15px;
+  display:none;
+}
+
+.heart{
+  position:fixed;
+  bottom:-10px;
+  font-size:18px;
+  animation:float 6s linear infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(0); opacity:1;}
+  100%{transform:translateY(-110vh); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Happy Valentine’s Day ❤️</h1>
+
+<p>
+Mama neenga 3,772 miles la irunthalum, enoda heart and soul  
+epothum ungalta than irukum 😚💞<br><br>
+
+2019 la start aanathu intha journey… now it's 2026  
+still every moment with you is special 💕  
+You are more than a life partner —  
+thanks for being my best friend 💖<br><br>
+
+Life la first time naanu lucky nu feel panathu unala tha 🥹  
+Everything will feel kind of cringe until it happens to us 😄💃<br><br>
+
+I love you more than words can say 🥺💕
+</p>
+
+<button onclick="showSurprise()">Click this to see our journey 🥰</button>
+
+<!-- 🎬 Video -->
+<video id="loveVideo" controls>
+  <source src="journey.mp4" type="video/mp4">
+</video></br></br>
+<button onclick="document.getElementById('voiceNote').play()">click this-vera vali ila itha ketutha aganum🤭🥱</button>
+<p>lyrics for u </p>
+<p>these lines says that neenga ena epdi pathukuring yanakaga ena ena pandringa and lots🫠</p>
+<p>until my last breath my love remains same for u🤗</p>
+<p>like my age increase aguramari unga mela ulla luv increase agitetha iruken it will never decreases💋♾️</p>
+
+<!-- 🎙️ Your Voice Recording -->
+<audio id="voiceNote">
+  <source src="unakena.wav" type="audio/wav">
+</audio>
+
+</div>
+
+<script>
+function showSurprise(){
+  var video = document.getElementById("loveVideo");
+  video.style.display = "block";
+  video.play();
+
+  /* when video ends → play audio */
+  video.onended = function(){
+    document.getElementById("voiceNote").play();
+  }
+}
+
+/* floating hearts */
+function createHeart(){
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random()*100 + "vw";
+  document.body.appendChild(heart);
+  setTimeout(()=>{heart.remove();},6000);
+}
+setInterval(createHeart,500);
+</script>
+
+</body>
+</html>
